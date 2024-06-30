@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>EgoLift University</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          class="nav-logo"
+          id="logo"
+          src="./nav-photo.jpg"
+          alt="EgoLift University logo"
+        />
+
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a class="nav-link about-link" href="">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link developer-link" href="">Developer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link paths-link" href="">Paths</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-title">
+        <h2>Resistance training that's right for you</h2>
+      </div>
+    </header>
+
+    <section class="section" id="section-1">
+      <div class="section-title">
+        <h2 class="section-header">What is EgoLift University?</h2>
+        <h3 class="section-description">
+          Best online resource for the big three resistance training styles.
+        </h3>
+      </div>
+      <!-- <div class="section-content"></div> -->
+    </section>
+
+    <section class="section" id="section-2">
+      <div class="section-title">
+        <h2 class="section-header">Developer Profile</h2>
+      </div>
+      <div class="section-content">
+        <div class="developer-profile">
+          <div class="developer-container">
+            <h3 class="section-description">
+              I am a Software Engineer and your casual gym goer. I am currently
+              focusing on Calisthenics for my main training method but I do
+              Bodybuilding and Powerlifting workouts from time to time when I go
+              to the gym.
+            </h3>
+          </div>
+          <div class="developer-container">
+            <img
+              class="developer-pfp"
+              src="./developer_profile/pfp.jpg"
+              alt="Picture of the developer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section-3">
+      <div class="section-title">
+        <h2 class="section-header">Training Paths</h2>
+        <h3 class="section-description">
+          Bodybuilding, Calisthenics, Powerlifting, make your choice.
+        </h3>
+      </div>
+      <div class="section-content">
+        <div class="paths-menu">
+          <div class="path-profile">
+            <!-- <h2
+              class="path-profile-title path-profile-title-active"
+              data-path="1"
+            >
+              BODYBUILDING
+            </h2> -->
+            <button
+              class="path-profile-btn path-profile-btn-active"
+              data-path="1"
+            >
+              BODYBUILDING
+            </button>
+            <div class="path-profile-content path-profile-content-active">
+              <p>
+                Focuses on muscle hypertrophy through high-volume resistance
+                training and a variety of exercises targeting different muscle
+                groups.
+              </p>
+            </div>
+          </div>
+          <div class="path-profile">
+            <!-- <h2 class="path-profile-btn" data-path="2">CALISTHENICS</h2> -->
+            <button class="path-profile-btn" data-path="2">CALISTHENICS</button>
+            <div class="path-profile-content">
+              <p>
+                Utilizes bodyweight exercises to improve strength, flexibility,
+                and endurance, often performed without gym equipment.
+              </p>
+            </div>
+          </div>
+          <div class="path-profile">
+            <!-- <h2 class="path-profile-btn" data-path="3">POWERLIFTING</h2> -->
+            <button class="path-profile-btn" data-path="3">POWERLIFTING</button>
+            <div class="path-profile-content">
+              <p>
+                Centers on maximizing strength in three main lifts—squat, bench
+                press, and deadlift—with a focus on lifting heavy weights for
+                low repetitions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        &copy;
+        <span class="footer-date"></span>
+        Copyright by <span class="fw-normal">Joshmar Morales</span>. Used for
+        portfolio showcasing only.
+      </p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
