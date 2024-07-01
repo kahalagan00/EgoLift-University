@@ -1,0 +1,177 @@
+/* Web Application Main Colors for now */
+/* #273043 */ /* Darkest */
+/* #9197ae */ /* Medium */
+/* #eff6ee */ /* Lightest */
+
+/* Ask ChatGPT or StackOverflow or MDN docs for the questions */
+/* Make sure you understand every CSS feature that is being used here */
+
+/* What does this '*' do in CSS ? */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* What does this do? */
+}
+
+html {
+  box-sizing: border-box; /* What does this do? */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 2;
+  background-color: #eff6ee;
+}
+
+img {
+  transition: filter 0.5s; /* What does this do? */
+}
+
+/* For the sections */
+.section {
+  padding: 15rem 3rem;
+  border-top: 1px solid #ddd;
+  transition: transform 1s, opacity 1s; /* What does this do? */
+}
+
+.section-header {
+  font-size: 50px;
+}
+
+/* For the nav bar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  width: 100%;
+  padding: 0 6rem;
+  background-color: #273043;
+  color: white;
+  z-index: 100; /* What does this do? */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none; /* What does this do? */
+}
+
+.nav-item {
+  margin-left: 4rem;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: inherit; /* What does this do? */
+  text-decoration: none; /* What does this do? */
+  display: block; /* What does this do? */
+  transition: all 0.3s; /* What does this do? */
+}
+
+.nav-logo {
+  height: 4.5rem;
+  transition: all 0.3s;
+  border-radius: 10px;
+}
+
+/* Developer information customization */
+.developer-profile {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.developer-container {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.developer-pfp {
+  max-width: 300px;
+  height: auto;
+  border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+  .developer-container {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+
+  .developer-pfp {
+    height: auto; /* Adjust image height for smaller screens */
+  }
+}
+
+/* Training paths customization */
+.paths-menu {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 25px;
+}
+
+.path-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.path-profile-content {
+  margin-top: 20px;
+  background-color: white;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 16px;
+  padding: 10px 10px 10px 20px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  transition: transform 0.2s ease-in-out;
+
+  height: 200px;
+  width: 300px;
+}
+
+.path-profile-content-active {
+  transform: scale(1.1);
+}
+
+.path-profile-btn-active {
+  transform: translateY(-30%);
+}
+
+.path-profile-btn {
+  appearance: button;
+  cursor: pointer; /* Changes how the curser looks when hovering */
+  background-color: #273043;
+  border-radius: 16px;
+  color: white;
+  padding: 13px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.path-profile-btn:hover {
+  filter: brightness(1.2);
+}
+
+/* Footer customizations */
+.footer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #273043;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

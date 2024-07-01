@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* What does this do? */
+}
+
+html {
+  box-sizing: border-box; /* What does this do? */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 2;
+  background-color: #eff6ee;
+}
+
+/* For the sections */
+.section {
+  padding: 15rem 3rem;
+  border-top: 1px solid #ddd;
+  transition: transform 1s, opacity 1s; /* What does this do? */
+}
+
+.section-header {
+  font-size: 50px;
+}
