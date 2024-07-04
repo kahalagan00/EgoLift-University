@@ -3,9 +3,10 @@
 /** Handling the filled out information at the top */
 const initializeStats = function () {
   const inputError = function (inputBox) {
-    inputBox.placeholder = "Please enter a valid input";
+    inputBox.placeholder = "Please enter valid input";
     inputBox.value = "";
     inputBox.style.backgroundColor = "#F5B7B1";
+    inputBox.classList.add("user-input-invalid");
   };
 
   const clearInput = function (inputBox) {

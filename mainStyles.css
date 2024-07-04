@@ -28,11 +28,17 @@ img {
   transition: filter 0.5s; /* What does this do? */
 }
 
+/* For the main header */
+/* .header {
+  height: 100vh;
+} */
+
 /* For the sections */
 .section {
   padding: 15rem 3rem;
   border-top: 1px solid #9197ae;
   transition: transform 1s, opacity 1s; /* What does this do? */
+  height: 100vh;
 }
 
 .section-header {
@@ -76,6 +82,12 @@ img {
   height: 4.5rem;
   transition: all 0.3s;
   border-radius: 10px;
+}
+
+.nav.sticky {
+  position: fixed;
+  transition: all 0.2s;
+  /* background-color: rgba(255, 255, 255, 0.95); */
 }
 
 /* Developer information customization */
@@ -127,18 +139,14 @@ img {
   margin-top: 20px;
   background-color: white;
   border: 1px solid;
-  border-color: black;
+  border-color: #273043;
   border-radius: 16px;
   padding: 10px 10px 10px 20px;
-
   font-size: 18px;
   font-weight: 500;
-
   transition: transform 0.2s ease-in-out;
-
   height: 200px;
   width: 300px;
-
   filter: blur(10px);
 }
 

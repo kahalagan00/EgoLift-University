@@ -4,9 +4,14 @@
 const currentDate = document.querySelector(".footer-date");
 currentDate.textContent = new Date().getFullYear();
 
+/** Main components  */
+const header = document.querySelector(".header");
+const nav = document.querySelector(".nav");
+const navLinks = document.querySelectorAll(".nav-link");
 const section1 = document.querySelector("#section-1");
 const section2 = document.querySelector("#section-2");
 const section3 = document.querySelector("#section-3");
+const section4 = document.querySelector("#section-4");
 
 const navHover = function (e) {
   if (e.target.classList.contains("nav-link")) {
@@ -20,8 +25,6 @@ const navHover = function (e) {
 };
 
 const navInteraction = function () {
-  const nav = document.querySelector(".nav");
-  const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -37,12 +40,32 @@ const navInteraction = function () {
         section3.scrollIntoView({
           behavior: "smooth",
         });
+      } else if (link.textContent === "Diet") {
+        section4.scrollIntoView({
+          behavior: "smooth",
+        });
       }
     });
   });
 
   nav.addEventListener("mouseover", navHover.bind(0.5));
   nav.addEventListener("mouseout", navHover.bind(1));
+};
+
+const navStickyScroll = function () {
+  const navHeight = nav.getBoundingClientRect().height;
+  const stickyNav = function (entries) {
+    const [entry] = entries;
+    if (!entry.isIntersecting) nav.classList.add("sticky");
+    else nav.classList.remove("sticky");
+  };
+  const headerObserver = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`,
+  });
+
+  headerObserver.observe(header);
 };
 
 const pathsInteraction = function () {
@@ -81,3 +104,4 @@ const pathsInteraction = function () {
 
 navInteraction();
 pathsInteraction();
+navStickyScroll();
