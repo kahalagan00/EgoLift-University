@@ -138,10 +138,13 @@ img {
 
   height: 200px;
   width: 300px;
+
+  filter: blur(10px);
 }
 
 .path-profile-content-active {
   transform: scale(1.1);
+  filter: blur(0);
 }
 
 .path-profile-btn-active {
@@ -164,6 +167,15 @@ img {
 
 .path-profile-btn:hover {
   filter: brightness(1.2);
+}
+
+.enrollment-link {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.enrollment-link-active {
+  opacity: 100;
 }
 
 /* Footer customizations */

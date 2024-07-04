@@ -21,6 +21,7 @@ h3 {
 
 h4 {
   font-size: 20px;
+  font-weight: 500;
 }
 
 /* For the sections */
@@ -37,17 +38,20 @@ h4 {
 .section-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
 }
 
+/* Initial section with player information */
 .user-statistics {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  flex: 1;
+  padding: 25px;
 }
 
 .user-character {
-  max-width: 50%;
+  flex: 1;
+  padding: 25px;
 }
 
 .user-inputs {
@@ -59,7 +63,7 @@ h4 {
   border-radius: 16px;
   font-size: 15px;
   letter-spacing: 0.3px;
-  max-width: 75%;
+  max-width: 50%;
 }
 
 .btn-statistics {
@@ -72,9 +76,30 @@ h4 {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.8px;
-  max-width: 50%;
+  max-width: 20%;
 }
 
 .btn-statistics:hover {
   filter: brightness(1.2);
+}
+
+/* Recommended Routine Section */
+
+.ppl-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ppl-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ppl-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px;
 }

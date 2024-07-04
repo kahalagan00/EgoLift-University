@@ -4,56 +4,80 @@
 const currentDate = document.querySelector(".footer-date");
 currentDate.textContent = new Date().getFullYear();
 
-/** Main page links and sections elements */
-const aboutLink = document.querySelector(".about-link");
-const developerLink = document.querySelector(".developer-link");
-const pathsLink = document.querySelector(".paths-link");
 const section1 = document.querySelector("#section-1");
 const section2 = document.querySelector("#section-2");
 const section3 = document.querySelector("#section-3");
 
-/** Main training paths section elements  */
-const pathsMenuBar = document.querySelector(".paths-menu");
-const pathProfiles = document.querySelectorAll(".path-profile");
-const pathProfilesButtons = document.querySelectorAll(".path-profile-btn");
+const navHover = function (e) {
+  if (e.target.classList.contains("nav-link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav-link");
 
-/** Main scrolling to the sections */
-aboutLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  console.log("Clicked on About");
-  section1.scrollIntoView({
-    behavior: "smooth",
-  });
-});
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = this;
+    });
+  }
+};
 
-developerLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  console.log("Clicked on Developer");
-  section2.scrollIntoView({
-    behavior: "smooth",
-  });
-});
-
-pathsLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  console.log("Clicked on Paths");
-  section3.scrollIntoView({
-    behavior: "smooth",
-  });
-});
-
-/** Main interactivity with the training paths */
-pathsMenuBar.addEventListener("click", function (event) {
-  event.preventDefault();
-  const clicked = event.target.closest(".path-profile-btn");
-  if (!clicked) return;
-  else console.log(clicked);
-
-  pathProfilesButtons.forEach((button) => {
-    button.classList.remove("path-profile-btn-active");
-    button.nextElementSibling.classList.remove("path-profile-content-active");
+const navInteraction = function () {
+  const nav = document.querySelector(".nav");
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (link.textContent === "About") {
+        section1.scrollIntoView({
+          behavior: "smooth",
+        });
+      } else if (link.textContent === "Developer") {
+        section2.scrollIntoView({
+          behavior: "smooth",
+        });
+      } else if (link.textContent === "Paths") {
+        section3.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
   });
 
-  clicked.classList.add("path-profile-btn-active");
-  clicked.nextElementSibling.classList.add("path-profile-content-active");
-});
+  nav.addEventListener("mouseover", navHover.bind(0.5));
+  nav.addEventListener("mouseout", navHover.bind(1));
+};
+
+const pathsInteraction = function () {
+  /** Main training paths section elements  */
+  const pathsMenuBar = document.querySelector(".paths-menu");
+  const pathProfiles = document.querySelectorAll(".path-profile");
+  const pathProfilesButtons = document.querySelectorAll(".path-profile-btn");
+  const enrollmentLinks = document.querySelectorAll(".enrollment-link");
+
+  /** Main interactivity with the training paths */
+  pathsMenuBar.addEventListener("click", function (event) {
+    // event.preventDefault();
+    const clicked = event.target.closest(".path-profile-btn");
+    if (!clicked) return;
+    // else console.log(clicked);
+
+    pathProfilesButtons.forEach((button) => {
+      button.classList.remove("path-profile-btn-active");
+      button.nextElementSibling.classList.remove("path-profile-content-active");
+    });
+
+    clicked.classList.add("path-profile-btn-active");
+    clicked.nextElementSibling.classList.add("path-profile-content-active");
+
+    enrollmentLinks.forEach((link) => {
+      if (
+        link === clicked.nextElementSibling.querySelector(".enrollment-link")
+      ) {
+        link.classList.add("enrollment-link-active");
+      } else {
+        link.classList.remove("enrollment-link-active");
+      }
+    });
+  });
+};
+
+navInteraction();
+pathsInteraction();
