@@ -5,14 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./bodybuildingStyles.css" />
     <title>Bodybuilding Path</title>
+    <script defer src="./bodybuildingScript.js"></script>
   </head>
   <body>
-    <section class="section">
+    <section class="section" id="section-1">
       <div class="section-title">
         <h2 class="section-header">Welcome to the Bodybuilding Path</h2>
       </div>
+      <div class="section-content">
+        <div class="user-statistics">
+          <h3>Fill out the information below</h3>
+          <input
+            class="user-inputs"
+            id="enteredName"
+            type="text"
+            data-default="Full Name"
+            placeholder="Full Name"
+            minlength="1"
+            maxlength="20"
+          />
+          <input
+            class="user-inputs entered-age"
+            type="text"
+            data-default="Age"
+            placeholder="Age"
+            minlength="1"
+            maxlength="20"
+          />
+          <input
+            class="user-inputs entered-weight"
+            type="text"
+            data-default="Weight"
+            placeholder="Weight"
+            minlength="1"
+            maxlength="20"
+          />
+          <input
+            class="user-inputs entered-height"
+            type="text"
+            data-default="Height"
+            placeholder="Height"
+            minlength="1"
+            maxlength="20"
+          />
+          <button class="btn-statistics">Submit</button>
+        </div>
+        <div class="user-character">
+          <h3>Image of player</h3>
+          <h4 class="player-introduction"></h4>
+          <!-- <h4 class="player-calculated-stats"></h4> -->
+        </div>
+      </div>
     </section>
 
-    <script src="./bodybuildingScript.js"></script>
+    <section class="section" id="section-2">
+      <div class="section-title">
+        <h2 class="section-header">Recommended Routine</h2>
+      </div>
+    </section>
+
+    <!-- <script src="./bodybuildingScript.js"></script> -->
   </body>
 </html>

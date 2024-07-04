@@ -57,5 +57,3 @@ pathsMenuBar.addEventListener("click", function (event) {
   clicked.classList.add("path-profile-btn-active");
   clicked.nextElementSibling.classList.add("path-profile-content-active");
 });
-
-console.log("fat");
