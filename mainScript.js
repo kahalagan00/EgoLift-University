@@ -31,18 +31,22 @@ const navInteraction = function () {
       if (link.textContent === "About") {
         section1.scrollIntoView({
           behavior: "smooth",
+          block: "end",
         });
       } else if (link.textContent === "Developer") {
         section2.scrollIntoView({
           behavior: "smooth",
+          block: "end",
         });
       } else if (link.textContent === "Paths") {
         section3.scrollIntoView({
           behavior: "smooth",
+          block: "end",
         });
       } else if (link.textContent === "Diet") {
         section4.scrollIntoView({
           behavior: "smooth",
+          block: "end",
         });
       }
     });
@@ -56,16 +60,38 @@ const navStickyScroll = function () {
   const navHeight = nav.getBoundingClientRect().height;
   const stickyNav = function (entries) {
     const [entry] = entries;
+    console.log(entry);
     if (!entry.isIntersecting) nav.classList.add("sticky");
     else nav.classList.remove("sticky");
   };
   const headerObserver = new IntersectionObserver(stickyNav, {
     root: null,
-    threshold: 0,
+    threshold: 0.0,
     rootMargin: `-${navHeight}px`,
   });
 
-  headerObserver.observe(header);
+  headerObserver.observe(section1);
+};
+
+const sectionFadeIn = function () {
+  const [...allSections] = [section1, section2, section3, section4];
+
+  const revealSection = function (entries, observer) {
+    const entry = entries[0];
+
+    if (!entry.isIntersecting) return;
+    entry.target.classList.remove("section-hidden");
+
+    // Prevents observing when scrolling back up to the section
+    observer.unobserve(entry.target);
+  };
+
+  const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.4, // Section starts fading in to the view when it is 15% visible
+  });
+
+  allSections.forEach((section) => sectionObserver.observe(section));
 };
 
 const pathsInteraction = function () {
@@ -105,3 +131,4 @@ const pathsInteraction = function () {
 navInteraction();
 pathsInteraction();
 navStickyScroll();
+sectionFadeIn();
