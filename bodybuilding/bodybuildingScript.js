@@ -64,5 +64,74 @@ const player = {
   heightMetric: "",
 };
 
+const exerciseInteraction = function () {
+  const ART_PATH = "./bodybuilding_art/";
+  const pushExercises = document
+    .querySelector(".push-routine")
+    .querySelectorAll(".specific-exercise");
+  const pullExercises = document
+    .querySelector(".pull-routine")
+    .querySelectorAll(".specific-exercise");
+  const legExercises = document
+    .querySelector(".legs-routine")
+    .querySelectorAll(".specific-exercise");
+
+  pushExercises.forEach(function (exercise, i) {
+    exercise.addEventListener("mouseover", function (e) {
+      document.querySelector(
+        ".push-exercise-pic"
+      ).src = `${ART_PATH}push_exercises/push${i}.jpg`;
+
+      exercise.classList.add("specific-exercise-active");
+    });
+
+    exercise.addEventListener("mouseout", function (e) {
+      exercise.classList.remove("specific-exercise-active");
+    });
+  });
+
+  pullExercises.forEach(function (exercise, i) {
+    exercise.addEventListener("mouseover", function (e) {
+      document.querySelector(
+        ".pull-exercise-pic"
+      ).src = `${ART_PATH}pull_exercises/pull${i}.jpg`;
+
+      exercise.classList.add("specific-exercise-active");
+    });
+
+    exercise.addEventListener("mouseout", function (e) {
+      exercise.classList.remove("specific-exercise-active");
+    });
+  });
+
+  legExercises.forEach(function (exercise, i) {
+    exercise.addEventListener("mouseover", function (e) {
+      document.querySelector(
+        ".leg-exercise-pic"
+      ).src = `${ART_PATH}leg_exercises/leg${i}.jpg`;
+
+      exercise.classList.add("specific-exercise-active");
+    });
+
+    exercise.addEventListener("mouseout", function (e) {
+      exercise.classList.remove("specific-exercise-active");
+    });
+  });
+};
+
 initializeStats();
+exerciseInteraction();
 console.log("SHARKFATS");
+
+document
+  .getElementById("maleCheckbox")
+  .addEventListener("change", function (e) {
+    e.preventDefault();
+    if (this.checked) {
+      console.log("Male is checked");
+    } else {
+      console.log("Make is unchecked");
+    }
+  });
+
+console.log(document.getElementById("maleCheckbox"));
