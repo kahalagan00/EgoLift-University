@@ -13,6 +13,7 @@ const section2 = document.querySelector("#section-2");
 const section3 = document.querySelector("#section-3");
 const section4 = document.querySelector("#section-4");
 
+/** Navigation bar interactivity */
 const navHover = function (e) {
   if (e.target.classList.contains("nav-link")) {
     const link = e.target;
@@ -73,6 +74,7 @@ const navStickyScroll = function () {
   headerObserver.observe(section1);
 };
 
+/** Section loading  */
 const sectionFadeIn = function () {
   const [...allSections] = [section1, section2, section3, section4];
 
@@ -94,6 +96,7 @@ const sectionFadeIn = function () {
   allSections.forEach((section) => sectionObserver.observe(section));
 };
 
+/** Training paths section interactivity */
 const pathsInteraction = function () {
   /** Main training paths section elements  */
   const pathsMenuBar = document.querySelector(".paths-menu");
@@ -128,36 +131,59 @@ const pathsInteraction = function () {
   });
 };
 
+/** Diet Plans section interactivity */
 const dietInteraction = function () {
   const slides = document.querySelectorAll(".slide");
   const btnLeft = document.querySelector(".slider-btn-left");
   const btnRight = document.querySelector(".slider-btn-right");
-  let curSlide = 0;
   const maxSlides = slides.length;
+  const dots = document.querySelectorAll(".dots-dot");
+  let curSlide = 0;
 
-  slides.forEach(
-    (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
-  );
+  // Change the slides and highlight corresponding dot
+  const moveSlide = function (offset) {
+    dots.forEach((dot) => dot.classList.remove("dots-dot-active"));
+    dots[Math.abs(offset)].classList.add("dots-dot-active");
+    slides.forEach(
+      (slide, i) =>
+        (slide.style.transform = `translateX(${100 * (i + offset)}%)`)
+    );
+  };
 
-  btnRight.addEventListener("click", function (e) {
+  const nextSlide = function () {
     curSlide--;
-    slides.forEach(
-      (slide, i) =>
-        (slide.style.transform = `translateX(${100 * (i + curSlide)}%)`)
-    );
-  });
+    if (curSlide * -1 === maxSlides) curSlide = 0;
+    // console.log(`btnRight, curSlide = ${curSlide}`);
+    moveSlide(curSlide);
+  };
 
-  btnLeft.addEventListener("click", function (e) {
+  const prevSlide = function () {
     curSlide++;
-    slides.forEach(
-      (slide, i) =>
-        (slide.style.transform = `translateX(${100 * (i + curSlide)}%)`)
-    );
+    if (curSlide > 0) curSlide = (maxSlides - 1) * -1;
+    // console.log(`btnLeft, curSlide = ${curSlide}`);
+    moveSlide(curSlide);
+  };
+
+  moveSlide(0); // Initialize all pictures in the starting position
+
+  btnRight.addEventListener("click", nextSlide);
+
+  btnLeft.addEventListener("click", prevSlide);
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", function (e) {
+      if (i > Math.abs(curSlide)) {
+        nextSlide();
+      } else if (i < Math.abs(curSlide)) {
+        prevSlide();
+      }
+    });
   });
 };
 
+/** Main functions calls */
 navInteraction();
-pathsInteraction();
 navStickyScroll();
+pathsInteraction();
 sectionFadeIn();
 dietInteraction();
