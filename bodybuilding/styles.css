@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* What does this do? */
+}
+
+html {
+  box-sizing: border-box; /* What does this do? */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 2;
+  color: #1b262c;
+  background-color: #cdf5fd;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* For the sections */
+.section {
+  padding: 10rem 3rem;
+  /* border-top: 1px dashed #9197ae; */
+  transition: transform 1s, opacity 1s; /* What does this do? */
+  height: 100vh;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.section-header {
+  font-size: 50px;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+/* Initial section with player information */
+.user-statistics {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* margin: 0 50px 0 50px; */
+  border: 3px solid #89cff3;
+  padding: 25px;
+  background-color: #a0e9ff;
+  border-radius: 16px;
+}
+
+.user-character {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* margin: 0 50px 0 50px; */
+  border: 3px solid #89cff3;
+  padding: 25px;
+  background-color: #a0e9ff;
+  border-radius: 16px;
+}
+
+.user-inputs {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #89cff3;
+  border-radius: 16px;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  /* max-width: 75%; */
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+}
+input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  border: 2px solid #555555;
+  border-radius: 3px;
+  background-color: white;
+}
+input[type="checkbox"]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+} */
+
+.user-input-invalid {
+  animation: hor-shake 0.5s;
+
+  /* animation-iteration-count: infinite; */
+}
+
+@keyframes hor-shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn-statistics {
+  appearance: button;
+  cursor: pointer; /* Changes how the curser looks when hovering */
+  background-color: #1b262c;
+  border-radius: 16px;
+  color: white;
+  padding: 13px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  /* max-width: 25%; */
+}
+
+.btn-statistics:hover {
+  filter: brightness(1.2);
+}
+
+/* Recommended Routine Section */
+
+.ppl-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ppl-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ppl-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border: 3px solid #89cff3;
+  border-radius: 16px;
+  margin: 25px 100px 25px 100px;
+  padding: 25px;
+  background-color: #a0e9ff;
+}
+
+.specific-exercise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  margin: 10px;
+  border-bottom: 5px solid #02547e;
+  border-radius: 16px;
+  background-color: #00a9ff;
+  width: 100%;
+}
+
+.specific-exercise-active {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.exercise-pic {
+  max-width: 75%;
+  height: auto;
+  border-radius: 16px;
+}
