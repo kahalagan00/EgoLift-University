@@ -219,7 +219,7 @@ input[type="checkbox"]:checked:after {
 
 .specific-exercise-active {
   filter: brightness(1.2);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .exercise-pic {
