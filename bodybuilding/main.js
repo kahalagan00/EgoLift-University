@@ -1,4 +1,5 @@
 "use strict";
+/** Main script file for the BodyBuilding page */
 
 /** Handling the filled out information at the top */
 const initializeStats = function () {
