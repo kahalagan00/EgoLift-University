@@ -76,6 +76,8 @@ const exerciseInteraction = function () {
     .querySelector(".legs-routine")
     .querySelectorAll(".specific-exercise");
 
+  const allExercises = [...pushExercises, ...pullExercises, ...legExercises];
+
   pushExercises.forEach(function (exercise, i) {
     exercise.addEventListener("click", function (e) {
       document.querySelector(
@@ -84,9 +86,9 @@ const exerciseInteraction = function () {
 
       exercise.classList.add("specific-exercise-active");
 
-      for (let j = 0; j < pushExercises.length; ++j) {
-        if (j !== i)
-          pushExercises[j].classList.remove("specific-exercise-active");
+      for (let j = 0; j < allExercises.length; ++j) {
+        if (allExercises[j] !== exercise)
+          allExercises[j].classList.remove("specific-exercise-active");
       }
     });
   });
@@ -99,9 +101,9 @@ const exerciseInteraction = function () {
 
       exercise.classList.add("specific-exercise-active");
 
-      for (let j = 0; j < pullExercises.length; ++j) {
-        if (j !== i)
-          pullExercises[j].classList.remove("specific-exercise-active");
+      for (let j = 0; j < allExercises.length; ++j) {
+        if (allExercises[j] !== exercise)
+          allExercises[j].classList.remove("specific-exercise-active");
       }
     });
   });
@@ -114,9 +116,9 @@ const exerciseInteraction = function () {
 
       exercise.classList.add("specific-exercise-active");
 
-      for (let j = 0; j < legExercises.length; ++j) {
-        if (j !== i)
-          legExercises[j].classList.remove("specific-exercise-active");
+      for (let j = 0; j < allExercises.length; ++j) {
+        if (allExercises[j] !== exercise)
+          allExercises[j].classList.remove("specific-exercise-active");
       }
     });
   });
