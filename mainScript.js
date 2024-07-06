@@ -60,7 +60,7 @@ const navStickyScroll = function () {
   const navHeight = nav.getBoundingClientRect().height;
   const stickyNav = function (entries) {
     const [entry] = entries;
-    console.log(entry);
+    // console.log(entry);
     if (!entry.isIntersecting) nav.classList.add("sticky");
     else nav.classList.remove("sticky");
   };
@@ -128,7 +128,36 @@ const pathsInteraction = function () {
   });
 };
 
+const dietInteraction = function () {
+  const slides = document.querySelectorAll(".slide");
+  const btnLeft = document.querySelector(".slider-btn-left");
+  const btnRight = document.querySelector(".slider-btn-right");
+  let curSlide = 0;
+  const maxSlides = slides.length;
+
+  slides.forEach(
+    (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
+  );
+
+  btnRight.addEventListener("click", function (e) {
+    curSlide--;
+    slides.forEach(
+      (slide, i) =>
+        (slide.style.transform = `translateX(${100 * (i + curSlide)}%)`)
+    );
+  });
+
+  btnLeft.addEventListener("click", function (e) {
+    curSlide++;
+    slides.forEach(
+      (slide, i) =>
+        (slide.style.transform = `translateX(${100 * (i + curSlide)}%)`)
+    );
+  });
+};
+
 navInteraction();
 pathsInteraction();
 navStickyScroll();
 sectionFadeIn();
+dietInteraction();
