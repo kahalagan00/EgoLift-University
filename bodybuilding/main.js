@@ -1,5 +1,24 @@
-"use strict";
 /** Main script file for the BodyBuilding page */
+"use strict";
+
+class Player {
+  constructor(name, age, weight, height) {
+    this.name = name;
+    this.age = age;
+    this.weight = weight;
+    this.height = height;
+  }
+
+  get heightUS() {
+    return this.height * 39.3701;
+  }
+
+  get weightUS() {
+    return this.weight * 2.20462;
+  }
+}
+
+let user;
 
 /** Handling the filled out information at the top */
 const initializeStats = function () {
@@ -45,7 +64,14 @@ const initializeStats = function () {
         return;
       }
 
-      const updatedIntro = `Welcome ${playerName.value}, you are currently ${age.value} years old, weighing in at ${weight.value}lbs and standing at ${height.value} tall.`;
+      user = new Player(
+        playerName.value,
+        age.value,
+        weight.value,
+        height.value
+      );
+
+      const updatedIntro = `Welcome ${user.name}, you are currently ${user.age} years old, weighing in at ${user.weight} kilograms and standing at ${user.height} meters.`;
 
       document.querySelector(".player-introduction").textContent = updatedIntro;
 
@@ -54,15 +80,6 @@ const initializeStats = function () {
       clearInput(weight);
       clearInput(height);
     });
-};
-
-const player = {
-  name: "",
-  age: "",
-  weightImperial: "",
-  weightMetric: "",
-  heightImperial: "",
-  heightMetric: "",
 };
 
 const exerciseInteraction = function () {
