@@ -3,11 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <title>Bodybuilding Path</title>
     <script defer src="./main.js"></script>
   </head>
   <body>
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <i class="bx bxl-codepen"></i>
+          <span>JhuvBodybuilding</span>
+        </div>
+        <i class="bx bx-menu" id="btnX"></i>
+      </div>
+      <div class="user">
+        <img
+          src="./assets/images/pull_exercises/pull5.jpg"
+          alt="Picture of guy curling"
+          class="user-img"
+        />
+        <div>
+          <p class="bold">Joshmar M.</p>
+          <p>Admin</p>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="bx bxs-grid-alt"></i>
+            <span class="nav-item">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-shopping-bag"></i>
+            <span class="nav-item">Products</span>
+          </a>
+          <span class="tooltip">Products</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-list-check"></i>
+            <span class="nav-item">Categories</span>
+          </a>
+          <span class="tooltip">Categories</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-food-menu"></i>
+            <span class="nav-item">Orders</span>
+          </a>
+          <span class="tooltip">Orders</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-body"></i>
+            <span class="nav-item">Customers</span>
+          </a>
+          <span class="tooltip">Customers</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-location-plus"></i>
+            <span class="nav-item">Shipping</span>
+          </a>
+          <span class="tooltip">Shipping</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="nav-item">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="nav-item">Logout</span>
+          </a>
+          <span class="tooltip">Logout</span>
+        </li>
+      </ul>
+    </div>
+
     <section class="section" id="section-1">
       <div class="section-title">
         <h2 class="section-header">Welcome to the Bodybuilding Path 💪🏻</h2>
@@ -89,7 +172,7 @@
             <div class="ppl-col push-routine-art">
               <img
                 class="push-exercise-pic exercise-pic"
-                src="./bodybuilding_art/push_exercises/push0.jpg"
+                src="./assets/images/push_exercises/push0.jpg"
                 alt="Bench Press Picture"
               />
             </div>
@@ -107,7 +190,7 @@
             <div class="ppl-col pull-routine-art">
               <img
                 class="pull-exercise-pic exercise-pic"
-                src="./bodybuilding_art/pull_exercises/pull0.jpg"
+                src="./assets/images/pull_exercises/pull0.jpg"
                 alt="Bench Press Picture"
               />
             </div>
@@ -124,7 +207,7 @@
             <div class="ppl-col legs-routine-art">
               <img
                 class="leg-exercise-pic exercise-pic"
-                src="./bodybuilding_art/leg_exercises/leg0.jpg"
+                src="./assets/images/leg_exercises/leg0.jpg"
                 alt="Bench Press Picture"
               />
             </div>

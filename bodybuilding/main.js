@@ -2,19 +2,39 @@
 "use strict";
 
 class Player {
+  #name;
+  #age;
+  #weight;
+  #height;
   constructor(name, age, weight, height) {
-    this.name = name;
-    this.age = age;
-    this.weight = weight;
-    this.height = height;
+    this.#name = name;
+    this.#age = age;
+    this.#weight = weight;
+    this.#height = height;
+  }
+
+  get name() {
+    return this.#name;
+  }
+
+  get age() {
+    return this.#age;
+  }
+
+  get height() {
+    return this.#height;
+  }
+
+  get weight() {
+    return this.#weight;
   }
 
   get heightUS() {
-    return this.height * 39.3701;
+    return this.#height * 39.3701;
   }
 
   get weightUS() {
-    return this.weight * 2.20462;
+    return this.#weight * 2.20462;
   }
 }
 
@@ -83,7 +103,7 @@ const initializeStats = function () {
 };
 
 const exerciseInteraction = function () {
-  const ART_PATH = "./bodybuilding_art/";
+  const IMAGES_PATH = "./assets/images/";
   const pushExercises = document
     .querySelector(".push-routine")
     .querySelectorAll(".specific-exercise");
@@ -100,7 +120,7 @@ const exerciseInteraction = function () {
     exercise.addEventListener("click", function (e) {
       document.querySelector(
         ".push-exercise-pic"
-      ).src = `${ART_PATH}push_exercises/push${i}.jpg`;
+      ).src = `${IMAGES_PATH}push_exercises/push${i}.jpg`;
 
       exercise.classList.add("specific-exercise-active");
 
@@ -115,7 +135,7 @@ const exerciseInteraction = function () {
     exercise.addEventListener("click", function (e) {
       document.querySelector(
         ".pull-exercise-pic"
-      ).src = `${ART_PATH}pull_exercises/pull${i}.jpg`;
+      ).src = `${IMAGES_PATH}pull_exercises/pull${i}.jpg`;
 
       exercise.classList.add("specific-exercise-active");
 
@@ -130,7 +150,7 @@ const exerciseInteraction = function () {
     exercise.addEventListener("click", function (e) {
       document.querySelector(
         ".leg-exercise-pic"
-      ).src = `${ART_PATH}leg_exercises/leg${i}.jpg`;
+      ).src = `${IMAGES_PATH}leg_exercises/leg${i}.jpg`;
 
       exercise.classList.add("specific-exercise-active");
 

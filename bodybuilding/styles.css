@@ -26,6 +26,15 @@ h4 {
   font-weight: 500;
 }
 
+/* Sidebar attempt implementation */
+.user-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 1px solid gray;
+}
+
 /* For the sections */
 .section {
   padding: 10rem 3rem;
