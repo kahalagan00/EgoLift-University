@@ -13,7 +13,7 @@ body {
   font-weight: 300;
   line-height: 2;
   color: #1b262c;
-  background-color: #cdf5fd;
+  background-color: white;
 }
 
 h3 {
@@ -30,7 +30,7 @@ h4 {
 .sidebar {
   position: fixed;
   border-right: 2px solid #00aaff3f;
-  width: 250px;
+  width: 270px;
   height: 100%;
 }
 
@@ -39,6 +39,7 @@ h4 {
   padding: 25px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 900;
+  color: #176b87;
 }
 
 .nav-link {
@@ -61,9 +62,66 @@ h4 {
   background-color: #00aaff1a;
 }
 
+/* Miscellanous bar */
+.miscBar {
+  position: fixed;
+  right: 0;
+  /* border-left: 2px solid #00aaff3f; */
+  width: 540px;
+  height: 100%;
+}
+
+.miscBar-title {
+  text-align: center;
+  padding: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 900;
+  color: #176b87;
+}
+
+.miscBar-container {
+  height: 300px;
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #00aaff3f;
+  border-radius: 16px;
+}
+
+.miscBar-container-title h4 {
+  font-weight: 600;
+  color: #176b87;
+  letter-spacing: 0.5px;
+}
+
+.premium {
+  height: 160px;
+}
+
+.premium-buy-btn {
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  appearance: button;
+  background-color: #00a9ff;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 10px 30px 10px 30px;
+  margin: 10px 25% 10px 25%;
+  border: 0;
+  border-bottom: 7px solid #02547e;
+  border-radius: 11px;
+}
+
+.premium-buy-btn:hover {
+  transform: translateY(1px);
+  border-bottom: 5px solid #02547e;
+}
+
 /* Main content structure */
 .main-content {
   margin-left: 270px;
+  margin-right: 540px;
 }
 
 /* For the sections */
@@ -103,7 +161,7 @@ h4 {
   /* margin: 0 50px 0 50px; */
   border: 3px solid #89cff3;
   padding: 25px;
-  background-color: #a0e9ff;
+  background-color: white;
   border-radius: 16px;
 }
 
@@ -115,9 +173,9 @@ h4 {
   margin-left: 100px;
   margin-right: 100px;
   /* margin: 0 50px 0 50px; */
-  border: 3px solid #89cff3;
+  border: 2px solid #89cff3;
   padding: 25px;
-  background-color: #a0e9ff;
+  background-color: white;
   border-radius: 16px;
 }
 
@@ -127,7 +185,7 @@ h4 {
   padding-bottom: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 3px solid #89cff3;
+  border: 2px solid #89cff3;
   border-radius: 16px;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -202,13 +260,16 @@ input[type="checkbox"]:checked:after {
 .btn-statistics {
   appearance: button;
   cursor: pointer; /* Changes how the curser looks when hovering */
-  background-color: #1b262c;
   border-radius: 16px;
   color: white;
   padding: 13px 16px;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.8px;
+  border: 0;
+  background-color: #00a9ff;
+  border-bottom: 5px solid #02547e;
+  border-radius: 11px;
   /* max-width: 25%; */
 }
 
@@ -250,7 +311,7 @@ input[type="checkbox"]:checked:after {
   cursor: pointer;
   padding: 5px 30px 5px 30px;
   margin: 10px;
-  border-bottom: 5px solid #02547e;
+  border-bottom: 6px solid #02547e;
   border-radius: 16px;
   color: white;
   font-weight: 300;
@@ -258,17 +319,23 @@ input[type="checkbox"]:checked:after {
   width: 100%;
 }
 
+.specific-exercise:hover {
+  transform: translateY(1px);
+  border-bottom: 5px solid #02547e;
+}
+
 .sets {
   font-weight: 600;
 }
 
 .specific-exercise-active {
-  filter: brightness(1.1);
+  /* filter: brightness(1.1); */
+  border-bottom: 0;
   /* transform: scale(1.05); */
 }
 
 .exercise-pic {
-  max-width: 75%;
+  max-width: 100%;
   height: auto;
   border-radius: 16px;
 }

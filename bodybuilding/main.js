@@ -117,7 +117,7 @@ const exerciseInteraction = function () {
   const allExercises = [...pushExercises, ...pullExercises, ...legExercises];
 
   pushExercises.forEach(function (exercise, i) {
-    exercise.addEventListener("click", function (e) {
+    exercise.addEventListener("mousedown", function (e) {
       document.querySelector(
         ".push-exercise-pic"
       ).src = `${IMAGES_PATH}push_exercises/push${i}.jpg`;
@@ -128,6 +128,12 @@ const exerciseInteraction = function () {
         if (allExercises[j] !== exercise)
           allExercises[j].classList.remove("specific-exercise-active");
       }
+    });
+
+    exercise.addEventListener("mouseup", function (e) {
+      allExercises.foreach((exc) =>
+        exc.classList.remove("specific-exercise-active")
+      );
     });
   });
 
@@ -187,5 +193,18 @@ sideBarOpt.forEach((opt) => {
     e.preventDefault();
     sideBarOpt.forEach((opt) => opt.classList.remove("nav-link-active"));
     opt.classList.add("nav-link-active");
+  });
+});
+
+const section1 = document.getElementById("section-1");
+const section2 = document.getElementById("section-2");
+const sideBarLinks = document.querySelectorAll(".nav-link");
+
+sideBarLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    section2.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
   });
 });
