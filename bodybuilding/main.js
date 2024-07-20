@@ -166,6 +166,7 @@ initializeStats();
 exerciseInteraction();
 console.log("SHARKFATS");
 
+/** Checkbox functionality  */
 document
   .getElementById("maleCheckbox")
   .addEventListener("change", function (e) {
@@ -178,3 +179,13 @@ document
   });
 
 console.log(document.getElementById("maleCheckbox"));
+
+/** Sidebar functionality */
+const sideBarOpt = document.querySelectorAll(".nav-link");
+sideBarOpt.forEach((opt) => {
+  opt.addEventListener("click", function (e) {
+    e.preventDefault();
+    sideBarOpt.forEach((opt) => opt.classList.remove("nav-link-active"));
+    opt.classList.add("nav-link-active");
+  });
+});
