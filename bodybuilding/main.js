@@ -38,6 +38,10 @@ class Player {
   }
 }
 
+const modalHeader = document.querySelector(".modal-header");
+const wholeSidebar = document.querySelector(".sidebar");
+const wholeMiscBar = document.querySelector(".miscBar");
+const section1 = document.querySelector("#section-1");
 let user;
 
 /** Handling the filled out information at the top */
@@ -95,6 +99,14 @@ const initializeStats = function () {
 
       document.querySelector(".player-introduction").textContent = updatedIntro;
 
+      modalHeader.textContent = "Logging in ...";
+
+      setTimeout(function () {
+        section1.classList.add("loggedin");
+        wholeSidebar.classList.remove("logoff");
+        wholeMiscBar.classList.remove("logoff");
+      }, 3000);
+
       clearInput(playerName);
       clearInput(age);
       clearInput(weight);
@@ -102,74 +114,7 @@ const initializeStats = function () {
     });
 };
 
-const exerciseInteraction = function () {
-  const IMAGES_PATH = "./assets/images/";
-  const pushExercises = document
-    .querySelector(".push-routine")
-    .querySelectorAll(".specific-exercise");
-  const pullExercises = document
-    .querySelector(".pull-routine")
-    .querySelectorAll(".specific-exercise");
-  const legExercises = document
-    .querySelector(".legs-routine")
-    .querySelectorAll(".specific-exercise");
-
-  const allExercises = [...pushExercises, ...pullExercises, ...legExercises];
-
-  pushExercises.forEach(function (exercise, i) {
-    exercise.addEventListener("mousedown", function (e) {
-      document.querySelector(
-        ".push-exercise-pic"
-      ).src = `${IMAGES_PATH}push_exercises/push${i}.jpg`;
-
-      exercise.classList.add("specific-exercise-active");
-
-      for (let j = 0; j < allExercises.length; ++j) {
-        if (allExercises[j] !== exercise)
-          allExercises[j].classList.remove("specific-exercise-active");
-      }
-    });
-
-    exercise.addEventListener("mouseup", function (e) {
-      allExercises.foreach((exc) =>
-        exc.classList.remove("specific-exercise-active")
-      );
-    });
-  });
-
-  pullExercises.forEach(function (exercise, i) {
-    exercise.addEventListener("click", function (e) {
-      document.querySelector(
-        ".pull-exercise-pic"
-      ).src = `${IMAGES_PATH}pull_exercises/pull${i}.jpg`;
-
-      exercise.classList.add("specific-exercise-active");
-
-      for (let j = 0; j < allExercises.length; ++j) {
-        if (allExercises[j] !== exercise)
-          allExercises[j].classList.remove("specific-exercise-active");
-      }
-    });
-  });
-
-  legExercises.forEach(function (exercise, i) {
-    exercise.addEventListener("click", function (e) {
-      document.querySelector(
-        ".leg-exercise-pic"
-      ).src = `${IMAGES_PATH}leg_exercises/leg${i}.jpg`;
-
-      exercise.classList.add("specific-exercise-active");
-
-      for (let j = 0; j < allExercises.length; ++j) {
-        if (allExercises[j] !== exercise)
-          allExercises[j].classList.remove("specific-exercise-active");
-      }
-    });
-  });
-};
-
 initializeStats();
-exerciseInteraction();
 console.log("SHARKFATS");
 
 /** Checkbox functionality  */
@@ -185,26 +130,3 @@ document
   });
 
 console.log(document.getElementById("maleCheckbox"));
-
-/** Sidebar functionality */
-const sideBarOpt = document.querySelectorAll(".nav-link");
-sideBarOpt.forEach((opt) => {
-  opt.addEventListener("click", function (e) {
-    e.preventDefault();
-    sideBarOpt.forEach((opt) => opt.classList.remove("nav-link-active"));
-    opt.classList.add("nav-link-active");
-  });
-});
-
-const section1 = document.getElementById("section-1");
-const section2 = document.getElementById("section-2");
-const sideBarLinks = document.querySelectorAll(".nav-link");
-
-sideBarLinks.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    section2.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
-  });
-});

@@ -30,8 +30,14 @@ h4 {
 .sidebar {
   position: fixed;
   border-right: 2px solid #00aaff3f;
+  background-color: white;
   width: 270px;
   height: 100%;
+  transition: filter 1s ease-in;
+}
+
+.sidebar.logoff {
+  filter: blur(20px);
 }
 
 .sidebar-title {
@@ -51,6 +57,7 @@ h4 {
   /* border: 2px solid black; */
   font-weight: 600;
   border-radius: 16px;
+  width: 150px;
 }
 
 .nav-link-active {
@@ -62,6 +69,35 @@ h4 {
   background-color: #00aaff1a;
 }
 
+@media (700px <= width <= 1100px) {
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar span {
+    display: none;
+  }
+
+  .sidebar p {
+    display: none;
+  }
+
+  .nav-link {
+    width: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    position: relative;
+    border: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Miscellanous bar */
 .miscBar {
   position: fixed;
@@ -69,6 +105,11 @@ h4 {
   /* border-left: 2px solid #00aaff3f; */
   width: 540px;
   height: 100%;
+  transition: filter 1s ease-in;
+}
+
+.miscBar.logoff {
+  filter: blur(100px);
 }
 
 .miscBar-title {
@@ -118,6 +159,43 @@ h4 {
   border-bottom: 5px solid #02547e;
 }
 
+.ranking {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.ranking-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ranking-content img {
+  max-width: 300px;
+  max-height: 300px;
+  height: auto;
+  width: auto;
+  align-self: center;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .miscBar {
+    position: relative;
+    width: 100vw;
+  }
+
+  .miscBar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
 /* Main content structure */
 .main-content {
   margin-left: 270px;
@@ -126,6 +204,8 @@ h4 {
 
 /* For the sections */
 .section {
+  display: flex;
+  flex-direction: column;
   padding: 10rem 3rem;
   /* border-top: 1px dashed #9197ae; */
   transition: transform 1s, opacity 1s; /* What does this do? */
@@ -151,6 +231,29 @@ h4 {
 }
 
 /* Initial section with player information */
+
+#section-1.loggedin {
+  display: none;
+}
+
+#section-1.section {
+  position: absolute;
+  background-color: #e6f1f7;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 720px;
+  padding: 15px 0 0 0;
+  margin: 20px;
+  border: 1px solid #89cff3;
+  border-radius: 16px;
+}
+
+#section-1.section-content {
+  width: 100%;
+}
+
 .user-statistics {
   display: flex;
   flex-direction: column;
@@ -159,7 +262,7 @@ h4 {
   margin-left: 100px;
   margin-right: 100px;
   /* margin: 0 50px 0 50px; */
-  border: 3px solid #89cff3;
+  border: 2px solid #89cff3;
   padding: 25px;
   background-color: white;
   border-radius: 16px;
