@@ -56,7 +56,6 @@ const initializeStats = function () {
   const clearInput = function (inputBox) {
     inputBox.placeholder = inputBox.dataset.default;
     inputBox.value = "";
-    inputBox.style.backgroundColor = "white";
   };
 
   const playerName = document.getElementById("enteredName");
@@ -100,6 +99,7 @@ const initializeStats = function () {
       document.querySelector(".player-introduction").textContent = updatedIntro;
 
       modalHeader.textContent = "Logging in ...";
+      modalHeader.style.color = "green";
 
       setTimeout(function () {
         section1.classList.add("loggedin");

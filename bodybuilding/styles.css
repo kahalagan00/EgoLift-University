@@ -238,19 +238,20 @@ h4 {
 
 #section-1.section {
   position: absolute;
-  background-color: #e6f1f7;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   height: 720px;
-  padding: 15px 0 0 0;
-  margin: 20px;
-  border: 1px solid #89cff3;
+  background-color: white;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  padding-top: 20px;
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 16px;
 }
 
-#section-1.section-content {
+#section-1 .section-content {
   width: 100%;
 }
 
@@ -259,10 +260,8 @@ h4 {
   flex-direction: column;
   flex: 1;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
-  /* margin: 0 50px 0 50px; */
-  border: 2px solid #89cff3;
+  margin-left: 50px;
+  margin-right: 50px;
   padding: 25px;
   background-color: white;
   border-radius: 16px;
@@ -273,26 +272,41 @@ h4 {
   flex-direction: column;
   flex: 1;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
-  /* margin: 0 50px 0 50px; */
-  border: 2px solid #89cff3;
+  margin-left: 50px;
+  margin-right: 50px;
   padding: 25px;
   background-color: white;
   border-radius: 16px;
 }
 
+@media (max-width: 1450px) {
+  #section-1.section {
+    height: 100vh;
+    text-align: center;
+  }
+  #section-1 .section-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-character {
+    margin-top: 50px;
+  }
+}
+
 .user-inputs {
+  background-color: rgb(230, 230, 230);
+  color: black;
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px solid #89cff3;
+  border: 0;
   border-radius: 16px;
   font-size: 15px;
   letter-spacing: 0.3px;
-  /* max-width: 75%; */
 }
 
 input[type="checkbox"] {
