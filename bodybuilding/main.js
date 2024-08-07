@@ -41,7 +41,7 @@ class Player {
 const modalHeader = document.querySelector(".modal-header");
 const wholeSidebar = document.querySelector(".sidebar");
 const wholeMiscBar = document.querySelector(".miscBar");
-const section1 = document.querySelector("#section-1");
+const loginSection = document.querySelector("#loginSection");
 let user;
 
 /** Handling the filled out information at the top */
@@ -102,7 +102,7 @@ const initializeStats = function () {
       modalHeader.style.color = "green";
 
       setTimeout(function () {
-        section1.classList.add("loggedin");
+        loginSection.classList.add("loggedin");
         wholeSidebar.classList.remove("logoff");
         wholeMiscBar.classList.remove("logoff");
       }, 3000);
